@@ -1,0 +1,38 @@
+image: node:12.16.0
+
+buildBooks: &buildBooks
+  step:
+    name: 
+      Build books
+    script:
+      - yarn install
+      - yarn global add ewer
+      - apt update
+      - apt install -y libnspr4 libnss3 libnss3-tools libgl1-mesa-glx
+      - wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sh /dev/stdin
+      - mkdir ./kindlegen && cd ./kindlegen
+      - wget http://kindlegen.s3.amazonaws.com/kindlegen_linux_2.6_i386_v2_9.tar.gz
+      - tar xvfz kindlegen_linux_2.6_i386_v2_9.tar.gz
+      - mv ./kindlegen /usr/local/bin
+      - cd ..
+      - ewer build --directory de --build $BITBUCKET_BUILD_NUMBER --commit $BITBUCKET_COMMIT
+pipelines:
+  default:
+    - <<: *buildBooks
+
+  branches:
+    master:
+      - <<: *buildBooks
+
+clone:
+  depth: 20
+
+
+# - printf "deb http://deb.debian.org/debian stretch main contrib non-free\ndeb http://security.debian.org/debian-security stretch/updates main contrib non-free\ndeb http://deb.debian.org/debian stretch-updates main contrib non-free" > /etc/apt/sources.list
+# - apt update
+# - apt install build-essential
+# - wget http://ftp.de.debian.org/debian/pool/main/n/nss/libnss3_3.42.1-1+deb10u2_amd64.deb
+# - dpkg -i libnss3_3.42.1-1+deb10u2_amd64.deb
+# - cat /etc/debian_version
+# - cat /etc/apt/sources.list
+# - calibre --version

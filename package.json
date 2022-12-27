@@ -1,0 +1,18 @@
+{
+  "name": "sophia",
+  "description": "Eine Weihnachtsgeschichte",
+  "version": "1.0.0",
+  "isbn": "<ISBN>",
+  "asin": "<ASIN>",
+  "main": "index.js",
+  "repository": "",
+  "authors": "Michael Schmidt",
+  "license": "MIT",
+  "scripts": {
+    "build:all": "ewer build --language de --types epub,pdf,rtf,txt",
+    "build:de": "ewer build --language de",
+    "transcribe:de": "ewer transcribe --language de",
+    "local": "node ~/Der-Garten-des-Epikur/apps/ewer/lib build"
+  },
+  "dependencies": { }
+}
