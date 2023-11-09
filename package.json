@@ -1,7 +1,7 @@
 {
   "name": "sophia",
-  "description": "Eine Weihnachtsgeschichte",
-  "version": "1.0.0",
+  "description": "Sophia und Josef",
+  "version": "1.1.0",
   "isbn": "<ISBN>",
   "asin": "<ASIN>",
   "main": "index.js",
@@ -11,8 +11,13 @@
   "scripts": {
     "build:all": "ewer build --language de --types epub,pdf,rtf,txt",
     "build:de": "ewer build --language de",
+    "build:scripts": "tsc",
     "transcribe:de": "ewer transcribe --language de",
     "local": "node ~/Der-Garten-des-Epikur/apps/ewer/lib build"
   },
-  "dependencies": { }
+  "devDependencies": {
+    "@types/node": "^20.9.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.2.2"
+  }
 }
