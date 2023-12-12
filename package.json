@@ -1,7 +1,7 @@
 {
   "name": "sophia-christmas-story",
   "description": "Sophia und Josef",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "isbn": "<ISBN>",
   "asin": "<ASIN>",
   "main": "index.js",
