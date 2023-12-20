@@ -1,1 +1,3 @@
-p { text-indent: 5mm; }
+p {
+  text-indent: 0mm;
+}
