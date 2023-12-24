@@ -53,7 +53,8 @@ module.exports = {
       prettyPrint: true,
     },
     pdfOutputOptions: {
-      customSizeCm: "13.97x21.59",
+      // customSizeCm: "13.97x21.59", // Hardcover
+      customSizeCm: "12.7x20.32", // Paperback
       customSize: null,
       paperSize: "a5",
       pdfPageNumbers: true,
