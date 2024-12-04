@@ -1,28 +1,28 @@
 {
-  "name": "sophia-christmas-story",
-  "description": "Sophia und Josef",
-  "version": "1.1.9",
-  "isbn": "<ISBN>",
-  "asin": "<ASIN>",
-  "main": "index.js",
-  "repository": "",
-  "authors": "Michael Schmidt",
-  "license": "MIT",
-  "scripts": {
-    "build:all": "ewer build --language de --types epub,pdf,rtf,txt",
-    "build:de": "ewer build --language de",
-    "build:scripts": "tsc",
-    "transcribe:de": "ewer transcribe --language de",
-    "local": "node ~/Der-Garten-des-Epikur/apps/ewer/lib build",
-    "persons": "awk '/categories:/ {flag=1; next} /tags:/ {flag=0} flag' ./text/de/*.md | sort -u"
-  },
-  "devDependencies": {
-    "@types/node": "^20.9.0",
-    "ts-node": "^10.9.1",
-    "typescript": "^5.2.2"
-  },
-  "dependencies": {
-    "global": "^4.4.0",
-    "npm": "10.2.5"
-  }
+    "name": "sophia-christmas-story",
+    "description": "Sophia und Josef",
+    "version": "1.1.11",
+    "isbn": "<ISBN>",
+    "asin": "<ASIN>",
+    "main": "index.js",
+    "repository": "",
+    "authors": "Michael Schmidt",
+    "license": "MIT",
+    "scripts": {
+        "build:all": "ewer build --language de --types epub,pdf,rtf,txt",
+        "build:de": "ewer build --language de",
+        "build:scripts": "tsc",
+        "transcribe:de": "ewer transcribe --language de",
+        "local": "node ~/Der-Garten-des-Epikur/apps/ewer/lib build",
+        "persons": "awk '/categories:/ {flag=1; next} /tags:/ {flag=0} flag' ./text/de/*.md | sort -u"
+    },
+    "devDependencies": {
+        "@types/node": "^20.9.0",
+        "ts-node": "^10.9.1",
+        "typescript": "^5.2.2"
+    },
+    "dependencies": {
+        "global": "^4.4.0",
+        "npm": "10.2.5"
+    }
 }
